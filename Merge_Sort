@@ -1,33 +1,48 @@
 #This code implements the merge sort algorithm
 
 def merge_sort(arr):
+    # Check if the length of the input array is greater than 1, if so, perform sorting
     if len(arr) > 1:
+        # Find the midpoint of the array
         mid = len(arr) // 2
+        # Split the array into two halves, left and right
         left_half = arr[:mid]
         right_half = arr[mid:]
 
+        # Recursively call merge_sort on both halves
         merge_sort(left_half)
         merge_sort(right_half)
 
+        # Initialize indices for the left half, right half, and merged array
         i = j = k = 0
 
+        # While both halves have elements to be merged
         while i < len(left_half) and j < len(right_half):
+            # Compare the elements at the current indices of each half
             if left_half[i] < right_half[j]:
+                # If the element from the left half is smaller,
+                # add it to the merged array and increment the index for the left half
                 arr[k] = left_half[i]
                 i += 1
             else:
+                # If the element from the right half is smaller,
+                # add it to the merged array and increment the index for the right half
                 arr[k] = right_half[j]
                 j += 1
+            # Increment the index for the merged array
             k += 1
 
+        # If there are still elements in the left half, add them to the merged array
         while i < len(left_half):
             arr[k] = left_half[i]
             i += 1
             k += 1
 
+        # If there are still elements in the right half, add them to the merged array
         while j < len(right_half):
             arr[k] = right_half[j]
             j += 1
             k += 1
 
+    # Return the sorted array
     return arr
