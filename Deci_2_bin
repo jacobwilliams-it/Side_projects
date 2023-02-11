@@ -1,0 +1,12 @@
+#Here is a Python function that accepts a decimal number and returns its equivalent binary number:
+
+
+def decimal_to_binary(decimal):
+    binary = ""
+    while decimal > 0:
+        binary = str(decimal % 2) + binary
+        decimal = decimal // 2
+    return binary
+
+# Test the function with an example value
+print(decimal_to_binary(5000))

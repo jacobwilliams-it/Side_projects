@@ -1,0 +1,10 @@
+#You can convert radians to degrees by multiplying the radian value by 180/π. Here is a simple Python function that takes in a radian value and returns its equivalent degree value:
+
+
+import math
+
+def radians_to_degrees(radians):
+    return radians * 180 / math.pi
+
+# Test the function with an example value
+print(radians_to_degrees(math.pi / 2))
